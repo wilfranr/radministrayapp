@@ -33,6 +33,6 @@ const User = new Schema({
     },
     cel: {
         type: String
-    }
+    }   
 })
 module.exports = mongoose.model('user', User)
