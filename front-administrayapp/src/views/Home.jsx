@@ -4,6 +4,7 @@ import user from "../images/user.svg"
 import "../styles/style.css"
 import Panel from "../components/Panel";
 import Footer from "../components/Footer";
+import Login from "../views/Login"
 
 
 function Home() {
@@ -13,7 +14,9 @@ function Home() {
                 <img src={logo} alt="logo" width="120" />
                 <div id="userName">Invitado <img src={user} alt="user" width="20" />
                 </div>
-                <div className="login-btn" type="button" onclick="formLogin()">Ingresar</div>
+                <a href="/login">
+                    <div className="login-btn" type="button" component={Login}>Ingresar</div>
+                </a>
             </div>
             <Panel></Panel>
             <Footer></Footer>

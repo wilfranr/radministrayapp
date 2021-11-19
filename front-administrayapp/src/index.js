@@ -11,6 +11,8 @@ import Emprendimientos from "./views/Emprendimientos";
 import NuevoEmprendimiento from "./views/NuevoEmprendimiento";
 import EstadoCuenta from "./views/EstadoCuenta";
 import Acerca from "./views/Acerca"
+import Login from "./views/Login";
+import Register from "./views/Register";
 
 
 const container = document.getElementById('root');
@@ -29,5 +31,7 @@ ReactDOM.render(
         <Route path="/nuevoemprendimiento" element={<NuevoEmprendimiento/>}/>
         <Route path="/estadocuenta" element={<EstadoCuenta/>}/>
         <Route path="/acerca" element={<Acerca/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
     </Routes>
 </BrowserRouter>,container)
