@@ -1,9 +1,29 @@
-import React from "react";
-import logo from "../components/assets/img/logo.png"
-import Register from "../views/Register"
+import React, { useRef } from "react";
+import axios from 'axios'
+import Logo from "../../assets/img/logo.png"
+import Register from "../register/Register"
+import authHelper from "../../../helpers/auth.helper"
 
 
-function Login() {
+export default function Login() {
+    const email = useRef()
+    const pass = useRef()
+
+    const signIng = async () => {
+        let form = new URLSearchParams()
+        form.append('email', email.current.value)
+        form.append('password', pass.current.value)
+        console.log(process.env.REACT_APP_API_URL)
+        const data = await axios.post(process.env.REACT_APP_API_URL+'auth/login',form, {
+            header: {'Accept': 'application/json'}
+        })
+        authHelper.setToken(data.data.token)
+        console.log(data)
+
+    alert('Usuario Logueado')
+    }
+
+
     return (
         <div className="container">
             <section className="ftco-section">
@@ -17,7 +37,7 @@ function Login() {
 
                                     <a href="/">
                                 <div className="img d-flex align-items-center justify-content-center">
-                                        <img src={logo} alt="" width="70%" />
+                                        <img src={Logo} alt="" width="70%" />
                                 </div>
                                     </a>
 
@@ -25,12 +45,12 @@ function Login() {
                                 <form action="" className="login-form mt-2">
                                     <div className="form-group">
                                         <div className="icon d-flex align-items-center justify-content-center"><span className="fa fa-user"></span></div>
-                                        <input type="text" id="email" className="form-control" placeholder="Email" required />
+                                        <input type="text" id="email" ref={email} className="form-control bg-secondary" placeholder="Email" required />
                                     </div>
                                     <div className="form-group">
                                         <div className="icon d-flex align-items-center justify-content-center"><span className="fa fa-lock"></span></div>
                                         <input type="password" id="pass"
-                                            className="form-control mt-3" placeholder="Password" required />
+                                            className="form-control mt-3 bg-secondary" ref={pass} placeholder="Password" required />
                                     </div>
                                     <div className="form-group d-md-flex">
                                         <div className="w-100 text-md-right">
@@ -38,10 +58,9 @@ function Login() {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <input
-                                            className="bt btn-primary mt-2"
+                                        <input className="bt btn-primary mt-2"
                                             type="button"
-                                            value="Ingresar"
+                                            value="Ingresar" onClick={signIng}
                                         />
 
                                     </div>
@@ -60,4 +79,3 @@ function Login() {
         </div>
     )
 }
-export default Login

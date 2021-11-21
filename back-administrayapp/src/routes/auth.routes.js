@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const msg = require('../helpers/messages')
-const User = require('../models/user')
-const authService = require('../services/auth.service')
+const authController = require('../controllers/auth.controller');
+const { check } = require('express-validator');
 
 /**
  * @api {get} /profile Perfil del usuario
@@ -10,17 +9,7 @@ const authService = require('../services/auth.service')
  * @apiDescription Perfil del usuario logueado
  * @apiGroup Data
  */
-router.get('/profile', async (req, res)=>{
-    try {
-        const user = new User(req.body)
-        // let token = await authService.register(user)
-        // res.status(200).json({"token": token})
-        res.send("bien")
-    } catch (error) {
-        res.send(error)
-        // res.status(500).json({'error':error})
-    }
-})
+router.get('/profile', authController.profile)
 
 
 /**
@@ -93,15 +82,12 @@ router.get('/profile', async (req, res)=>{
  *       }
  *   }
  */
-router.post('/register', async (req, res)=>{
-    try {
-        const user = new User(req.body)
-        let token = await authService.register(user)
-        res.status(200).json({"token": token})
-    } catch (error) {
-        res.send(error)
-    }
-})
+router.post('/register', [
+    check('name', 'nombre no valido, minimo 2 carácteres, máximo 40 caráteres').isLength({ min: 2, max: 40 }),
+    check('email', 'Email no valido').isEmail(),
+    check('password', 'Contraseña debil').isStrongPassword()
+],
+    authController.register)
 
 
 /**
@@ -113,18 +99,6 @@ router.post('/register', async (req, res)=>{
  * @apiParam {string} password Contraseña del usuario
  * @apiSampleRequest https://mintic-18.herokuapp.com/auth/login
  */
-router.post('/login', async (req, res)=>{
-    try {
-        const {email, password} = req.body
-        if(!email || !password){
-            res.status(400).json(msg.fieldsRequired)
-        }
-        const token = await authService.login(req.body)
-        res.status(token.code).json({"token":token})
-    } catch (error) {
-        // res.send(error)
-        res.status(500).json({'error':error})
-    }
-})
+router.post('/login', authController.login)
 
 module.exports = router

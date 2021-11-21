@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../components/assets/img/logo.png"
+import Logo from "../../assets/img/logo.png"
 
 
 function Register() {
@@ -11,9 +11,11 @@ function Register() {
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-4">
             <div className="login-wrap py-5">
+                <a href="/">
               <div className="img d-flex align-items-center justify-content-center">
-                <img src={Logo} alt="" width="180%" />
+                  <img src={Logo} alt="" width="70%" />
               </div>
+                </a>
               <p className="text-center">Registro</p>
               <form action="#" className="login-form mt-2">
                 <div className="form-group">

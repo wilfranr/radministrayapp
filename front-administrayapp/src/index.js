@@ -11,8 +11,9 @@ import Emprendimientos from "./views/Emprendimientos";
 import NuevoEmprendimiento from "./views/NuevoEmprendimiento";
 import EstadoCuenta from "./views/EstadoCuenta";
 import Acerca from "./views/Acerca"
-import Login from "./views/Login";
-import Register from "./views/Register";
+import Login from "./components/auth/login/Login";
+import Register from "./components/auth/register/Register";
+require ('dotenv').config()
 
 
 const container = document.getElementById('root');

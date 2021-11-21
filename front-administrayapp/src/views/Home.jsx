@@ -4,7 +4,7 @@ import user from "../images/user.svg"
 import "../styles/style.css"
 import Panel from "../components/Panel";
 import Footer from "../components/Footer";
-import Login from "../views/Login"
+import Login from "../components/auth/login/Login"
 
 
 function Home() {

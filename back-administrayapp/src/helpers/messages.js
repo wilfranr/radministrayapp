@@ -12,7 +12,7 @@ let msg = {
     fieldsRequired: {
         code: 400,
         error: true,
-        msg: 'Please enter all fields'
+        msg: 'ingrese todos los campos'
     },
     authFailed: {
         code: 401,
