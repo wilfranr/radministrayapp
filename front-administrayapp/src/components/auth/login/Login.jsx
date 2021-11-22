@@ -3,7 +3,7 @@ import axios from 'axios'
 import Logo from "../../assets/img/logo.png"
 import Register from "../register/Register"
 import authHelper from "../../../helpers/auth.helper"
-
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const email = useRef()
@@ -35,11 +35,11 @@ export default function Login() {
                         <div className="col-md-6 col-lg-4">
                             <div className="login-wrap py-5">
 
-                                    <a href="/">
+                                    <Link to="/">
                                 <div className="img d-flex align-items-center justify-content-center">
                                         <img src={Logo} alt="" width="70%" />
                                 </div>
-                                    </a>
+                                    </Link>
 
 
                                 <form action="" className="login-form mt-2">

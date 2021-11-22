@@ -5,6 +5,7 @@ import "../styles/style.css"
 import Panel from "../components/Panel";
 import Footer from "../components/Footer";
 import Login from "../components/auth/login/Login"
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -14,9 +15,9 @@ function Home() {
                 <img src={logo} alt="logo" width="120" />
                 <div id="userName">Invitado <img src={user} alt="user" width="20" />
                 </div>
-                <a href="/login">
+                <Link to="/login">
                     <div className="login-btn" type="button" component={Login}>Ingresar</div>
-                </a>
+                </Link>
             </div>
             <Panel></Panel>
             <Footer></Footer>
