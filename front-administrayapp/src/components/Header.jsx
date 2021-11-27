@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/logo.png"
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 
 class Header extends React.Component {
@@ -8,38 +9,28 @@ class Header extends React.Component {
             <section id="header" class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <a class="navbar-brand me-4" href="/">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <Link to="/" style={{color: 'white'}}>
                                 <img src={logo} alt="logo" width="120" />
-                            </a>
+                            </Link>
                             <ul class="nav nav-tabs me-4">
                                 <li classe="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/">Inicio</a>
+                                    <Link to="/" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Inicio</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/Clasificados"
-                                    >Clasificados</a
-                                    >
+                                    <Link to="/Clasificados" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Clasificados</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/Comunicados"
-                                    >Comunicados</a
-                                    >
+                                    <Link to="/Comunicados" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Comunicados</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/Emprendimientos"
-                                    >Emprendimientos</a
-                                    >
+                                    <Link to="/Emprendimientos" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Emprendimientos</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/EstadoCuenta"
-                                    >Estado de cuenta</a
-                                    >
+                                    <Link to="/EstadoCuenta" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Estado de cuenta</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" aria-current="page" href="/Contacto"
-                                    >Contacto</a
-                                    >
+                                    <Link to="/Contacto" style={{color: 'white'}} class="nav-link text-light" aria-current="page">Contacto</Link>
                                 </li>
                             </ul>
                             <form class="d-flex">
