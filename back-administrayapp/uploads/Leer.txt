@@ -1,0 +1,1 @@
+Ruta local donde se guardan las imagenes
