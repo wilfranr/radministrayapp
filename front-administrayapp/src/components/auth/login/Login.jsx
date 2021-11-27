@@ -3,13 +3,18 @@ import axios from 'axios'
 import Logo from "../../assets/img/logo.png"
 import Register from "../register/Register"
 import authHelper from "../../../helpers/auth.helper"
+import { useNavigate, Navigate } from "react-router-dom";
+import User from '../../../models/user'
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies()
 
 export default function Login() {
+    let navigate = useNavigate()
     const email = useRef()
     const pass = useRef()
 
-    const signIng = async () => {
+    const signIn = async () => {
         let form = new URLSearchParams()
         form.append('email', email.current.value)
         form.append('password', pass.current.value)
@@ -17,14 +22,21 @@ export default function Login() {
         const data = await axios.post(process.env.REACT_APP_API_URL+'auth/login',form, {
             header: {'Accept': 'application/json'}
         })
-        authHelper.setToken(data.data.token)
+        await authHelper.setToken(data.data.token)
         console.log(data)
+        const userData = data.data.user
+        const user = new User(userData._id, userData.name, userData.email, userData.rol)
+        cookies.set('name', userData.name, {path: '/'})
+        cookies.set('rol', userData.rol, {path: '/'})
+        alert('Bienvenido '+user.name)
+        console.log(user)
+        navigate('/')
 
-    alert('Usuario Logueado')
     }
 
 
     return (
+        // !authHelper.getToken()?
         <div className="container">
             <section className="ftco-section">
                 <div className="container">
@@ -60,7 +72,7 @@ export default function Login() {
                                     <div className="form-group">
                                         <input className="bt btn-primary mt-2"
                                             type="button"
-                                            value="Ingresar" onClick={signIng}
+                                            value="Ingresar" onClick={signIn}
                                         />
 
                                     </div>
@@ -77,5 +89,8 @@ export default function Login() {
                 </div>
             </section>
         </div>
+        // :
+        // alert('Usuario ya se encuentra logueado'),
+        // <Navigate to={'/'}/>
     )
 }

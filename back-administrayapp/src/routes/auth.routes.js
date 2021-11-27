@@ -85,7 +85,6 @@ router.get('/profile', authController.profile)
 router.post('/register', [
     check('name', 'nombre no valido, minimo 2 carácteres, máximo 40 caráteres').isLength({ min: 2, max: 40 }),
     check('email', 'Email no valido').isEmail(),
-    check('password', 'Contraseña debil').isStrongPassword()
 ],
     authController.register)
 

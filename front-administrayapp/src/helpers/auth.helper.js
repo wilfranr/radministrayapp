@@ -1,7 +1,7 @@
 const key = 'token'
 
-function setToken(token) {
-    localStorage.setItem(key, token)
+async function setToken(token) {
+    await localStorage.setItem(key, token)
 }
 
 function getToken() {

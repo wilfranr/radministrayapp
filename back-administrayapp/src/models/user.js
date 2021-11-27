@@ -14,12 +14,11 @@ const User = new Schema({
     },
     rol: {
         type: Number,
-        unique: true,
+        default: 1,
         require: true
     },
-    id: {
-        type: Number,
-        unique: true,
+    iden: {
+        type: String,
         require: true
     },
     bloque: {
