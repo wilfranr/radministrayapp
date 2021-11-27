@@ -121,6 +121,9 @@ body{
 }
 .form-control{
     background-color: #22282b !important;
-    color: #c3e0c8!important;
+    color: whitesmoke;
 
+}
+.thead-light, .col-md-12{
+    color: whitesmoke;
 }

@@ -13,6 +13,7 @@ import EstadoCuenta from "./views/EstadoCuenta";
 import Acerca from "./views/Acerca"
 import Login from "./components/auth/login/Login";
 import Register from "./components/auth/register/Register";
+import EditarClasificado from "./views/EditarClasificado";
 require ('dotenv').config()
 
 
@@ -25,6 +26,7 @@ ReactDOM.render(
         <Route path="/" element={<Home/>}/>
         <Route path="/clasificados" element={<Clasificados/>}/>
         <Route path="/nuevoclasificado" element={<NuevoClasificado/>}/>
+        <Route path="/editarclasificado/:id" element={<EditarClasificado/>}/>
         <Route path="/comunicados" element={<Comunicados/>}/>
         <Route path="/nuevocomunicado" element={<NuevoComunicado/>}/>
         <Route path="/contacto" element={<Contacto/>}/>
