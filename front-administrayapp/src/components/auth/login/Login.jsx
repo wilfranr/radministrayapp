@@ -3,7 +3,7 @@ import axios from 'axios'
 import Logo from "../../assets/img/logo.png"
 import Register from "../register/Register"
 import authHelper from "../../../helpers/auth.helper"
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import User from '../../../models/user'
 import Cookies from 'universal-cookie';
 
@@ -28,7 +28,6 @@ export default function Login() {
         const user = new User(userData._id, userData.name, userData.email, userData.rol)
         cookies.set('name', userData.name, {path: '/'})
         cookies.set('rol', userData.rol, {path: '/'})
-        alert('Bienvenido '+user.name)
         console.log(user)
         navigate('/')
 
@@ -36,7 +35,6 @@ export default function Login() {
 
 
     return (
-        // !authHelper.getToken()?
         <div className="container">
             <section className="ftco-section">
                 <div className="container">
@@ -89,8 +87,6 @@ export default function Login() {
                 </div>
             </section>
         </div>
-        // :
-        // alert('Usuario ya se encuentra logueado'),
-        // <Navigate to={'/'}/>
+        
     )
 }

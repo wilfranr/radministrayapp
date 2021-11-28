@@ -10,6 +10,10 @@ function getToken() {
 
 function deleteToken() {
     localStorage.removeItem(key)
+    window.location.href = '/';
+
+    
+
 }
 
 module.exports = {
