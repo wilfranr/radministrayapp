@@ -1,10 +1,10 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer"
-import anuncio from "../images/anuncio.jpg"
-import anuncio2 from "../images/anuncio2.jpg"
+// import anuncio from "../images/anuncio.jpg"
+// import anuncio2 from "../images/anuncio2.jpg"
 import authHelper from '../helpers/auth.helper'
 
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 //
 
@@ -35,12 +35,13 @@ function Clasificados() {
             <div className="clasificados">
                 <br />
                 <h2>CLASIFICADOS</h2>
-
-                <a href="/NuevoClasificado">
-                    <button class="btn btn-primary" type="button">Nuevo</button>
-                </a><br /><br />
+                {authHelper.getToken() ?
+                    <a href="/NuevoClasificado"><button className="btn btn-primary" type="button">Nuevo</button></a>
+                    :
+                    <p></p>
+                }
                                           
-                <div className="cards">
+                <div className="cards mt-3">
                     {                        
                         classifieds.map(classified => (
                             <div className="col-md-10 p-2" key={classified._id}>
