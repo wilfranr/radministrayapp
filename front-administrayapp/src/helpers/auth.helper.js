@@ -16,6 +16,6 @@ function deleteToken() {
 
 }
 
-module.exports = {
+export default {
     setToken, getToken, deleteToken
 }

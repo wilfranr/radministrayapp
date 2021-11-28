@@ -5,6 +5,7 @@ const cors = require('cors')
 const path = require('path')
 const app = express()
 const authRoutes = require('./routes/auth.routes')
+require('multer')
 const classifiedRoutes = require('./routes/classified.routes')//11/09/2021
 require('dotenv').config()
 
@@ -29,9 +30,9 @@ app.use('/auth', authRoutes)
 app.use('/classified', classifiedRoutes);//11/09/2021
 
 if (process.env.NODE_ENV === 'production'){
-    app.use(express.static(__dirname + '/dist/'))
+    app.use(express.static(__dirname + '/build/'))
     app.get('*', (req, res) => {
-        res.sendFile(__dirname + '/dist/index.html')
+        res.sendFile(__dirname + '/build/index.html')
     })
 }
 
