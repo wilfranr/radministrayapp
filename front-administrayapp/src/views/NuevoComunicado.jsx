@@ -6,20 +6,20 @@ function NuevoComunicado() {
     return (
         <div>
             <Header></Header>
-            <div class="container mb-5">
+            <div className="container mb-5">
                 <br />
                 <h2>COMUNICADOS</h2>
                 <br /><br /><br />
-                <h1 class="text-white text-center">Nuevo Comunicado</h1>
+                <h1 className="text-white text-center">Nuevo Comunicado</h1>
                 <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="text"
                     placeholder="Titulo"
                     aria-label=".form-control-lg example"
                     style={{ color: "azure" }}
                 /><br />
                 <textarea
-                    class="form-control"
+                    className="form-control"
                     placeholder="Descripción"
                     id="FormControlTextarea1"
                     rows="5"
@@ -34,7 +34,7 @@ function NuevoComunicado() {
                 /><br /><br />
                 <input
                     type="file"
-                    class="form-control"
+                    className="form-control"
                     id="inputGroupFile04"
                     aria-describedby="inputGroupFileAddon04"
                     aria-label="Upload"
@@ -42,7 +42,7 @@ function NuevoComunicado() {
                 /><br />
                 <router-link
                     to="/"
-                    class="btn btn-success btn-lg btn-block"
+                    className="btn btn-success btn-lg btn-block"
                     type="button"
                     id="inputGroupFileAddon04"
                     style={{ color: "rgb(255, 255, 255)" }}

@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer"
 import anuncio from "../images/anuncio.jpg"
 import anuncio2 from "../images/anuncio2.jpg"
+import authHelper from '../helpers/auth.helper'
 
 import React, {useEffect, useState, useRef} from 'react'
 import axios from 'axios'
@@ -31,9 +32,10 @@ function Clasificados() {
         
         <div>
             <Header></Header>
-            <div class="clasificados">
+            <div className="clasificados">
                 <br />
                 <h2>CLASIFICADOS</h2>
+
                 <a href="/NuevoClasificado">
                     <button class="btn btn-primary" type="button">Nuevo</button>
                 </a><br /><br />
@@ -63,6 +65,7 @@ function Clasificados() {
                             </div>
                         ))                        
                     }
+
                 </div>
             </div>
             <Footer></Footer>

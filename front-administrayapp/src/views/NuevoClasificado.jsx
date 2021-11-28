@@ -35,13 +35,18 @@ function NuevoClasificado() {
 
     return (
         <div>
-            <Header></Header>            
-            <div class="container mb-5">
+
+            
+
+            <Header></Header>
+            <div className="container mb-5">
                 <br />
-                <h3 class="text-white text-center">Nuevo Clasificado</h3>
-                <br />
+                <h2>CLASIFICADOS</h2>
+                <br /><br /><br />
+                <h3 className="text-white text-center">Nuevo Clasificado</h3>
+
                 <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="text"
                     placeholder="Email"
                     aria-label=".form-control-lg example"
@@ -49,7 +54,7 @@ function NuevoClasificado() {
                     ref={email}
                 /><br />
                 <input
-                    class="form-control form-control-lg"
+                    className="form-control form-control-lg"
                     type="text"
                     placeholder="Titulo"
                     aria-label=".form-control-lg example"
@@ -57,7 +62,7 @@ function NuevoClasificado() {
                     ref={nombre}
                 /><br />
                 <input
-                    class="form-control"
+                    className="form-control"
                     type="text"
                     placeholder="Descripción"
                     aria-label="default input example"
@@ -65,7 +70,7 @@ function NuevoClasificado() {
                     ref={descripcion}
                 /><br />
                 <input
-                    class="form-control form-control-sm"
+                    className="form-control form-control-sm"
                     type="text"
                     placeholder="Contacto"
                     aria-label=".form-control-sm example"
@@ -73,19 +78,21 @@ function NuevoClasificado() {
                     ref={contacto}
                 /><br />
                 <input
-                    class="form-control form-control-sm"
+                    className="form-control form-control-sm"
                     type="text"
                     placeholder="Url"
                     aria-label=".form-control-sm example"
                     style={{ color: "white" }}
                     ref={url}
                 /><br />
+
                 <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" style={{ color: "white" }} onChange={changeHandler}  class="form-control" id="customFile"  ref={image}/>
                 <br />
                 <br />
                 <button class="btn-success btn-lg" type="submit" onClick={newClassified} >Agregar</button>
                 <button class="btn-warning btn-lg" type="submit" onClick={() => {window.location.href = '/clasificados'}} >Cancelar</button>
                                 
+
             </div>
             <Footer></Footer>
         </div>

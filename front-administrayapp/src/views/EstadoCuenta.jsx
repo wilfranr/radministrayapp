@@ -6,16 +6,16 @@ function EstadoCuenta() {
   return (
     <div>
       <Header></Header>
-      <div class="clasificados">
+      <div className="clasificados">
         <br></br>
         <h2>ESTADO DE CUENTA</h2>
-        <div class="container mt-5">
-          <div class="container bg-light text-center text-black-50">
+        <div className="container mt-5">
+          <div className="container bg-light text-center text-black-50">
             <p>Torres de Bellavista</p>
             <p>Torre 1 Apto 1601</p>
             <p>Propietario: Yoseth Rivera</p>
           </div>
-          <table class="table bg-light">
+          <table className="table bg-light">
             <thead>
               <tr>
                 <th scope="col">#</th>
