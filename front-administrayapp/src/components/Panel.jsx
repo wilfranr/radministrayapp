@@ -17,7 +17,7 @@ import "../styles/style.css"
 function Panel(props) {
     return (
         <section id="panel">
-            <div class="grid">
+            <div className="container grid">
                 <Link to="/clasificados" style={{color: 'white'}}>
                     <img src={LogoClasificados} alt="clasificados" width="140" height="140" component={Clasificados}/>
                 </Link>

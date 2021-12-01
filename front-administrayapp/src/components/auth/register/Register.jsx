@@ -1,13 +1,13 @@
 import React, { Fragment, useRef } from "react";
 import Logo from "../../assets/img/logo.png"
 import axios from 'axios'
-//import authHelper from '../../../helpers/auth.helper'
-//import { useNavigate } from 'react-router-dom'
+import authHelper from '../../../helpers/auth.helper'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../../Footer'
 
 
 export default function Register() {
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
   const rol = useRef()
   const name = useRef()
   const email = useRef()
@@ -32,10 +32,10 @@ export default function Register() {
     const data = await axios.post(process.env.REACT_APP_API_URL+'auth/register', form, {
       header: { 'Accept': 'application/json' }
     })
-    //authHelper.setToken(data.data.token)
+    authHelper.setToken(data.data.token)
     console.log(data)
     alert('Usuario creado')
-    //navigate('/')
+    navigate('/')
 
 
   }
