@@ -32,7 +32,6 @@ export default function Register() {
     const data = await axios.post(process.env.REACT_APP_API_URL+'auth/register', form, {
       header: { 'Accept': 'application/json' }
     })
-    authHelper.setToken(data.data.token)
     console.log(data)
     alert('Usuario creado')
     navigate('/')
@@ -61,7 +60,7 @@ export default function Register() {
                         <option selected disabled>Seleccione un Rol</option>
                         <option value="1">Administrador</option>
                         <option value="2">Seguridad</option>
-                        <option value="3">Tercero</option>
+                        <option value="3">Contratista</option>
                         <option value="4">Propietario</option>
                         <option value="5">Residente</option>
                       </select>

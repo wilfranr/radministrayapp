@@ -23,15 +23,34 @@ export default function Login() {
             header: {'Accept': 'application/json'}
         })
         await authHelper.setToken(data.data.token)
-        console.log(data)
+        //console.log(data)
+        if (data.data.error === true) {
+            alert('Usuario o contraseña incorrectos')
+        }else{
         const userData = data.data.user
-        const user = new User(userData._id, userData.name, userData.email, userData.rol)
+        const user = new User(userData._id, userData.name, userData.email, userData.rol, userData.iden, userData.tel, userData.cel, userData.bloque, userData.apto)
+        const rol = userData.rol
+        var nameRol=""
+        if (rol===1) {
+            nameRol="Administrador"
+        }else if(rol===2){
+            nameRol="Seguridad"
+        }else if(rol===3){
+            nameRol="Contratista"
+        }else if(rol===4){
+            nameRol="Propietario"
+        }else if(rol===5){
+            nameRol="Residente"
+        }
+        
         cookies.set('name', userData.name, {path: '/'})
         cookies.set('rol', userData.rol, {path: '/'})
-        console.log(user)
+        cookies.set('nameRol', nameRol, {path: '/'})
         navigate('/')
+        }
 
     }
+    
 
 
     return (

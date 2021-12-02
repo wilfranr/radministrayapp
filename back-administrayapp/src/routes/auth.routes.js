@@ -20,11 +20,14 @@ router.get('/profile', authController.profile)
  * @apiParam {string} name Nombre del usuario que se registra
  * @apiParam {string} email E-mail del usuario que se registra
  * @apiParam {string} password Contraseña del usuario
+ * @apiParam {number} rol Rol de usuario
  * @apiParamExample {json} Request-Example:
  *          {
  *              "name": "Pepito Perez",
  *              "email": "pepitoperez@email.com",
- *              "password": "contraseña123"
+ *              "password": "contraseña123",
+ *              "rol": "1"
+ *
  *          }
  * @apiPermission none
  * @apiSuccess {json} token Token de acceso del usuario
@@ -37,6 +40,12 @@ router.get('/profile', authController.profile)
  *               "email": "pepitoperez@email.com",
  *               "password": "$2b$10$323qwuIJMh6w1zkU8aOzfOWQ.8Y95Qw6c27xX3Jy2psb9zwYS/Fym",
  *               "_id": "6179becd9d68f8b618716a00",
+ *               "rol": "1",
+ *               "iden" "1",
+ *               "tel",
+ *               "cel",
+ *               "bloque",
+ *               "apto",
  *               "__v": 0
  *           },
  *           "code": 200,

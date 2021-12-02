@@ -13,7 +13,7 @@ const authService = {
     login: async function(data){   
         try {
             const { email, password } = data
-            let userExists = await User.findOne({email:email}, 'name email password').exec()
+            let userExists = await User.findOne({email:email}, 'name email password rol iden tel cel bloque apto').exec()
             const userF = await bcrypt.compare(password, userExists.password).then(response=>response)
             if(userF){
                 let token = await authService.signToken(userExists.id)

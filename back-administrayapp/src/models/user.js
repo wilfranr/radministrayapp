@@ -14,7 +14,6 @@ const User = new Schema({
     },
     rol: {
         type: Number,
-        default: 1,
         require: true
     },
     iden: {

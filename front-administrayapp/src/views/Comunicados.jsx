@@ -9,7 +9,7 @@ function Comunicados() {
             <Header></Header>
             <div className="container mb-5">
                 <br />
-                <h2>COMUNICADOS</h2>
+                
                 <a href="/NuevoComunicado">
                     <button className="btn btn-primary" type="button">
                         Nuevo
