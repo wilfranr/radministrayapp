@@ -17,25 +17,29 @@ import "../styles/style.css"
 function Panel(props) {
     return (
         <section id="panel">
-            <div className="container grid">
-                <Link to="/clasificados" style={{color: 'white'}}>
-                    <img src={LogoClasificados} alt="clasificados" width="140" height="140" component={Clasificados}/>
-                </Link>
-                <Link to="/comunicados" style={{color: 'white'}}>
-                    <img src={LogoComunicados} alt="comunicados" width="140" height="140" component={Comunicados} />
-                </Link>
-                <Link to="/contacto" style={{color: 'white'}}>
-                    <img src={LogoContacto} alt="contacto" width="140" height="140" component={Contacto} />
-                </Link>
-                <Link to="/estadocuenta" style={{color: 'white'}}>
-                    <img src={LogoEstadoCuenta} alt="estado de cuenta" width="140" height="140" component={EstadoCuenta} />
-                </Link>
-                <Link to="/emprendimientos" style={{color: 'white'}}>
-                    <img src={LogoEmprendimientos} alt="emprendimientos" width="140" height="140" component={Emprendimientos} />
-                </Link>
-                <Link to="/acerca" style={{color: 'white'}}>
-                    <img src={LogoAcerca} alt="acerca" width="140" height="140" component={Acerca} />
-                </Link>
+            <div className="container">
+                <div className="row">
+                    <Link className="col mb-5" to="/clasificados" style={{color: 'white'}}>
+                        <img src={LogoClasificados} alt="clasificados" width="180" height="180" component={Clasificados}/>
+                    </Link>
+                    <Link className="col mb-5" to="/comunicados" style={{color: 'white'}}>
+                        <img src={LogoComunicados} alt="comunicados" width="180" height="180" component={Comunicados} />
+                    </Link>
+                    <Link className="col mb-5" to="/contacto" style={{color: 'white'}}>
+                        <img src={LogoContacto} alt="contacto" width="180" height="180" component={Contacto} />
+                    </Link>
+                </div>
+                <div className="row">
+                    <Link className="col mb-5" to="/estadocuenta" style={{color: 'white'}}>
+                        <img src={LogoEstadoCuenta} alt="estado de cuenta" width="180" height="180" component={EstadoCuenta} />
+                    </Link>
+                    <Link className="col mb-5" to="/emprendimientos" style={{color: 'white'}}>
+                        <img src={LogoEmprendimientos} alt="emprendimientos" width="180" height="180" component={Emprendimientos} />
+                    </Link>
+                    <Link className="col mb-5" to="/acerca" style={{color: 'white'}}>
+                        <img src={LogoAcerca} alt="acerca" width="180" height="180" component={Acerca} />
+                    </Link>
+                </div>
             </div>
         </section>
     )
