@@ -1,7 +1,6 @@
 import React, { Fragment, useRef } from "react";
 import Logo from "../../assets/img/logo.png"
 import axios from 'axios'
-import authHelper from '../../../helpers/auth.helper'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../Footer'
 
@@ -33,12 +32,11 @@ export default function Register() {
       header: { 'Accept': 'application/json' }
     })
     console.log(data)
-  
-
+    if (data.data.token.code === 11000) {
+      alert('usuario ya existe')
+    }else{
     alert('Usuario creado')
-    navigate('/')
-
-
+    navigate('/')}
   }
   return (
     <Fragment>
