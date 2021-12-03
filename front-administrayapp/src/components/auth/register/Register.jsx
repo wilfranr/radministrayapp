@@ -33,6 +33,8 @@ export default function Register() {
       header: { 'Accept': 'application/json' }
     })
     console.log(data)
+  
+
     alert('Usuario creado')
     navigate('/')
 
@@ -74,13 +76,13 @@ export default function Register() {
                         type="text" ref={bloque}
                         className="form-control mt-2"
                         placeholder="Bloque"
-                        required
+                        
                       />
                       <input
                         type="text" ref={apto}
                         className="form-control mt-2"
                         placeholder="Apartamento"
-                        required
+                        
                       />
                       <input ref={iden}
                         type="number"

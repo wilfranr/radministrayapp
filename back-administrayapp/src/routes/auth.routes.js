@@ -90,6 +90,32 @@ router.get('/profile', authController.profile)
  *           "message": "user validation failed: email: Path `email` is required."
  *       }
  *   }
+ *
+ *  * @apiError (422) (Data Error) error en la validación de los datos
+ * @apiErrorExample {json} Data-Error-Example
+ * HTTP/1.1 422 unprocessable entry
+ *  {
+ *       "errors": [
+ *           {
+ *               "value": "m",
+ *               "msg": "Nombre no valido, minimo 2 caracteres, maximo 40 caracteres",
+ *               "param": "name",
+ *               "location": "body"
+ *           },
+ *           {
+ *               "value": "ema",
+ *               "msg": "Email no valido",
+ *               "param": "email",
+ *               "location": "body"
+ *           },
+ *           {
+ *               "value": "df",
+ *               "msg": "Contraseña debil",
+ *               "param": "password",
+ *               "location": "body"
+ *           }
+ *       ]
+ *   }
  */
 router.post('/register', [
     check('name', 'nombre no valido, minimo 2 carácteres, máximo 40 caráteres').isLength({ min: 2, max: 40 }),
